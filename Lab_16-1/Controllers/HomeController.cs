@@ -26,11 +26,12 @@ namespace Lab_16_1.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            User u = new User();
-            return View(u);
+           
+            return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(User u)
         {
             // validate server-side (back-end)
